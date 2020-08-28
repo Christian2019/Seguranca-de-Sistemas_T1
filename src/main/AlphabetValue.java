@@ -5,7 +5,12 @@ import java.util.ArrayList;
 public class AlphabetValue {
 	public String letter;
 	public int value;
-	public static ArrayList<AlphabetValue> alphabetvalues;
+	public static ArrayList<AlphabetValue> alphabetvalues= new ArrayList<AlphabetValue>();
+
+	@Override
+	public String toString() {
+		return "AlphabetValue [letter=" + letter + ", value=" + value + "]\n";
+	}
 
 	public AlphabetValue(String letter, int value) {
 		this.letter = letter;
