@@ -77,6 +77,7 @@ public class AlphabetValue {
 	public static int get_Value(String l) {
 		for (int i = 0; i < alphabetvalues.size(); i++) {
 			if (alphabetvalues.get(i).letter.equals(l)) {
+				
 				return alphabetvalues.get(i).value;
 			}
 		}
@@ -90,7 +91,8 @@ public class AlphabetValue {
 				return alphabetvalues.get(i).letter;
 			}
 		}
-		System.out.println("Valor não encontrado!");
+	//	System.out.println("Valor não encontrado!");
+		
 		return "";
 	}
 }

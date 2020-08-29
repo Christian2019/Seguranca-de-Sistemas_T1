@@ -27,6 +27,7 @@ public static void load(String path) {
 						
 						
 						cont_line++;
+						return;
 					}
 				} catch (IOException e) {
 					e.printStackTrace();
