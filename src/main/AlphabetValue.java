@@ -82,6 +82,7 @@ public class AlphabetValue {
 			}
 		}
 		System.out.println("Letra não encontrada!");
+		System.out.println(l);
 		return -1;
 	}
 

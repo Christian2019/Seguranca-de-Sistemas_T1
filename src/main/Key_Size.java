@@ -5,8 +5,9 @@ import java.util.ArrayList;
 public class Key_Size {
 
 	static double ic_portugues = 0.072723;
+	static double ic_ingles = 0.065;
 
-	public static int discover_Key_Size() {
+	public static int discover_Key_Size(double ic_lingua) {
 		String text = Game.texto;
 		for (int i = 0; i < 10; i++) {
 			System.out.println("Chave de tamanho: " + (i+1));
@@ -18,7 +19,7 @@ public class Key_Size {
 
 				double ic = indice_coincidencia(teste);
 				System.out.println("IC: " + ic);
-				if (ic > (ic_portugues - 0.003) && ic < (ic_portugues + 0.003)) {
+				if (ic > (ic_lingua - 0.01) && ic < (ic_lingua + 0.01)) {
 					System.out.println("Chave de tamanho: " + (i+1));
 					return (i+1);
 				}

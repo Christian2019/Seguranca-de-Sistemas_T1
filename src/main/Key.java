@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Key {
 public static String key="";
 	public static void dicovery_key(int key_size) {
+	
 		String text = Game.texto;
 		ArrayList<String> colunas = new ArrayList<String>();
 		for (int i = 0; i < key_size; i++) {
@@ -14,7 +15,7 @@ public static String key="";
 			}
 			colunas.add(coluna);
 		}
-		
+		System.out.println(colunas);
 		// Como a letra de maior frequencia na lingua portuguesa é o a e ele tem valor
 		// 0, a letra de maior frequencia de cada coluna é igual a letra da chave
 		// correspondente
@@ -22,7 +23,12 @@ public static String key="";
 			ArrayList<AlphabetValue> ocorrencias= new ArrayList<AlphabetValue>();
 			ocorrencias = Key_Size.ocorrencias(colunas.get(i));
 			String letra_de_maior_frequencia= mf(ocorrencias);
+			if (Game.ic_escolhido==Key_Size.ic_portugues) {
 			key+=letra_de_maior_frequencia;
+			
+			}else {
+				key+=AlphabetValue.get_Letter(AlphabetValue.get_Value(letra_de_maior_frequencia)-4);
+			}
 			System.out.println(ocorrencias);
 		}
 		System.out.println(key);

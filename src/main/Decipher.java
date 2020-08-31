@@ -5,6 +5,7 @@ public class Decipher {
 	public static void decifrar() {
 		String text=Game.texto;
 		String key = Key.key;
+	//	String key = "meunome";
 		String resposta="";
 		int key_position=-1;
 		for (int i=0;i<text.length();i++) {
