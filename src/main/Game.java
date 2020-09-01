@@ -10,7 +10,7 @@ public static double ic_escolhido;
 		AlphabetValue.start();
 		
 		//Le o texto cifrado e armazena na variavel texto
-	Leitura.load("/entrada.txt");
+		Leitura.load("/entrada.txt");
 	//	Leitura.load("/ingles.txt");
 //		Leitura.load("/teste.txt");
 		//Cifador (para testes)
