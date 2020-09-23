@@ -17,7 +17,7 @@ public class AlphabetValue {
 		this.value = value;
 
 	}
-
+	// Cria um array das letras do alfabeta e seus respectivos valores ex: a=0 b=1 c=2....
 	public static void start() {
 		AlphabetValue a = new AlphabetValue("a", 0);
 		alphabetvalues.add(a);
@@ -73,7 +73,7 @@ public class AlphabetValue {
 		alphabetvalues.add(z);
 
 	}
-
+//Pega uma letra e retorna o valor
 	public static int get_Value(String l) {
 		for (int i = 0; i < alphabetvalues.size(); i++) {
 			if (alphabetvalues.get(i).letter.equals(l)) {
@@ -85,15 +85,15 @@ public class AlphabetValue {
 		System.out.println(l);
 		return -1;
 	}
-
+	
+//Pega um valor e retorna a letra 
 	public static String get_Letter(int value) {
 		for (int i = 0; i < alphabetvalues.size(); i++) {
 			if (alphabetvalues.get(i).value==value) {
 				return alphabetvalues.get(i).letter;
 			}
 		}
-	//	System.out.println("Valor não encontrado!");
-		
+		System.out.println("Valor não encontrado!");
 		return "";
 	}
 }

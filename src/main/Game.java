@@ -1,32 +1,32 @@
 package main;
-// Name: Christian Schmidt
+
+// Author: Christian Schmidt
+
 public class Game {
-public static String texto;
-public static double ic_escolhido;
+	//Texto cifrado	
+	public static String texto;
+	
+	//índice coincidência da língua escolhida
+	public static double ic_escolhido;
+
 	public static void main(String[] args) {
+		// ic recebe a ic da lingua portuguesa
 		ic_escolhido = Key_Size.ic_portugues;
-	//	ic_escolhido = Key_Size.ic_ingles;
-		//Cria um alfabeto com o valor de cada letra
+		
+		// Cria um array das letras do alfabeta e seus respectivos valores ex: a=0 b=1 c=2....
 		AlphabetValue.start();
-		
-		//Le o texto cifrado e armazena na variavel texto
+
+		// Le o texto cifrado "Arquivo cifrado (plaintext em Português)" e armazena na String texto
 		Leitura.load("/entrada.txt");
-	//	Leitura.load("/ingles.txt");
-//		Leitura.load("/teste.txt");
-		//Cifador (para testes)
-		System.out.println(Key_Size.ocorrencias(texto));
-//		texto=Cipher.cifrar(texto,"xyzhahae");
 		
-	//	System.out.println(texto);
-		//Descobre o tamanho da chave
-		int key_size=Key_Size.discover_Key_Size(ic_escolhido);
-	
-		//Descobre a chave
+		// Descobre o tamanho da chave
+		int key_size = Key_Size.discover_Key_Size(ic_escolhido);
+
+		// Descobre a chave
 		Key.dicovery_key(key_size);
-		//Decifra
+		
+		// Decifra
 		Decipher.decifrar();
-	
-		//Cria um txt com a resposta e printa na tela a resposta
 	}
 
 }
