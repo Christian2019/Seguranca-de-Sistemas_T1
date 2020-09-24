@@ -10,7 +10,7 @@ public class Key_Size {
 	// Retorna o tamanho da chave
 	public static int discover_Key_Size(double ic_lingua) {
 		String text = Game.texto;
-		// Testa chaves de tamanho 0 ate 100
+		// Testa chaves de tamanho 1 ate 100
 		for (int i = 0; i < 100; i++) {
 			System.out.println("Chave de tamanho: " + (i + 1));
 

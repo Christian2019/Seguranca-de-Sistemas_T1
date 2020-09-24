@@ -22,7 +22,7 @@ public class Game {
 		// Descobre o tamanho da chave
 		int key_size = Key_Size.discover_Key_Size(ic_escolhido);
 
-		// Descobre a chave
+		// Descobre todas as chaves possiveis
 		Key.dicovery_key(key_size);
 		
 		// Decifra
