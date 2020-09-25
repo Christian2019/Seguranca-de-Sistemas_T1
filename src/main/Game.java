@@ -1,6 +1,6 @@
 package main;
 
-// Author: Christian Schmidt
+	//Author: Christian Schmidt
 
 public class Game {
 	//Texto cifrado	

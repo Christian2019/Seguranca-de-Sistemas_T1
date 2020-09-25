@@ -3,7 +3,7 @@ package main;
 import java.util.ArrayList;
 
 public class Decipher {
-//Decifra o texto cifrado
+	// Decifra o texto cifrado
 	public static void decifrar() {
 		String key;
 		// Se a lingua for inglesa a chave ja esta pronta para decifrar
@@ -11,32 +11,32 @@ public class Decipher {
 			key = Key.key;
 			dec(key);
 		} else {
-			// Caso seja portugues pega todas as combinacoes possiveis entre as 2 chaves
-			// formadas pela frequencia maior de a e de e. Decifra todos os textos com todas
-			// as combinacoes de chaves.
-			// Pega a frequencia de k + w + y de cada um dos textos cifrados. A chave que resultou em menor
-			// frequencia sera a chave e o texto corretos.
+			// Caso seja portugues, decifra todos os textos com todas as combinacoes das chaves.
+			// Depois pega a frequencia de k + w + y de cada um dos textos decifrados. O texto que
+			// resultou em menor frequencia sera o texto correto, e portanto usou a chave correta
 			int menor = 0;
 			int cont_menor = Game.texto.length();
 			for (int i = 0; i < Key.keys.size(); i++) {
 				key = Key.keys.get(i);
-				//decifra o texto usando aquele respectiva chave
+				// Decifra o texto usando a chave enviada por parametro
 				String resposta = dec(key);
-				//calcula a frequencia de k+w+y
+				// Calcula a frequencia de k+w+y
 				int cont_chars = kwy(resposta);
 				if (cont_chars < cont_menor) {
 					cont_menor = cont_chars;
 					menor = i;
 				}
 			}
-			//Imprime a chave com o texto de menor frequencia de k+w+y
-			System.out.println("Chave correta: "+Key.keys.get(menor));
-			//Imprime os 100 primeiros caracters do texto decifrado.
-			System.out.println("100 primeiros caracteres do texto original: "+dec(Key.keys.get(menor)).substring(0, 100));
+			// Imprime a chave correta
+			System.out.println("Chave correta: " + Key.keys.get(menor));
+			// Imprime os 100 primeiros caracters do texto decifrado
+			System.out.println(
+					"100 primeiros caracteres do texto original: " + dec(Key.keys.get(menor)).substring(0, 100));
 		}
 
 	}
-//Retorna a frequencia de k+w+y de uma String
+
+	//Retorna a frequencia de k+w+y de uma String
 	public static int kwy(String resposta) {
 		int cont = 0;
 		ArrayList<AlphabetValue> frequencias = Key_Size.ocorrencias(resposta);
@@ -54,7 +54,7 @@ public class Decipher {
 		return cont;
 	}
 
-//Decifrador , recebe uma chave como parametro , pega o texto cifrado e retorna o texto original
+	//Decifra o texto cifrado usando uma chave como parametro
 	public static String dec(String key) {
 		String text = Game.texto;
 		String resposta = "";

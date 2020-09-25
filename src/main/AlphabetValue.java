@@ -73,7 +73,7 @@ public class AlphabetValue {
 		alphabetvalues.add(z);
 
 	}
-//Pega uma letra e retorna o valor
+	//Pega uma letra e retorna o valor
 	public static int get_Value(String l) {
 		for (int i = 0; i < alphabetvalues.size(); i++) {
 			if (alphabetvalues.get(i).letter.equals(l)) {
@@ -86,7 +86,7 @@ public class AlphabetValue {
 		return -1;
 	}
 	
-//Pega um valor e retorna a letra 
+	//Pega um valor e retorna a letra 
 	public static String get_Letter(int value) {
 		for (int i = 0; i < alphabetvalues.size(); i++) {
 			if (alphabetvalues.get(i).value==value) {

@@ -7,7 +7,7 @@ public class Key {
 	public static String key = "";
 	public static String key2 = "";
 
-	// Encontra a key que considera "a" como letra de maior frequencia e a key que
+	// Encontra a key que considera "a" como letra de maior frequencia e a key2 que
 	// considera "e"
 	// como a letra de maior frequencia. Tambem cria um Array com todas as
 	// combinacoes possiveis entre as 2 keys.
@@ -15,7 +15,7 @@ public class Key {
 
 		String text = Game.texto;
 		ArrayList<String> colunas = new ArrayList<String>();
-		// Divide o texto em colunas de tamanho igual ao tamanho da chave
+		// Divide o texto em n colunas, sendo n igual ao tamanho da chave
 		for (int i = 0; i < key_size; i++) {
 			String coluna = "";
 			for (int j = i; j < text.length(); j += key_size) {
@@ -30,28 +30,29 @@ public class Key {
 			ocorrencias = Key_Size.ocorrencias(colunas.get(i));
 			String letra_de_maior_frequencia = mf(ocorrencias);
 			// Se o texto estiver em portugues grava em key a letra de maior frequencia
-			// considerando "a" como a letra de maior frequencia da lingua
-			// Se o texto estiver em portugues grava em key2 a letra de maior frequencia
+			// considerando "a" como a letra de maior frequencia da lingua.
+			// Em key2 grava a letra de maior frequencia
 			// considerando "e" como a letra de maior frequencia da lingua
 			if (Game.ic_escolhido == Key_Size.ic_portugues) {
-				//a letra da chave correspondente a coluna = letra de maior frequencia - letra de maior frequencia da lingua
+				// a letra da chave correspondente a coluna = letra de maior frequencia - letra
+				// de maior frequencia da lingua
 				key += letra_de_maior_frequencia;
 				key2 += AlphabetValue.get_Letter(AlphabetValue.get_Value(letra_de_maior_frequencia) - 4);
 			} else {
-				// Se o texto esta em portugues grava em key2 a letra de maior frequencia
-				// considerando "e" como a da lingua
+				// Se o texto esta em ingles grava em key a letra de maior frequencia
+				// considerando "e" como a letra de maior frequencia da lingua
 				key += AlphabetValue.get_Letter(AlphabetValue.get_Value(letra_de_maior_frequencia) - 4);
 			}
-		//	System.out.println(ocorrencias);
+
 		}
 
-		System.out.println("Chave 1: "+key);
-		System.out.println("Chave 2: "+key2);
-		
-		//Grava todas as combinacoes das chaves na lista keys
+		System.out.println("Chave 1: " + key);
+		System.out.println("Chave 2: " + key2);
+
 		allkeyCombinations(key_size);
 	}
-	//Grava todas as combinacoes das chaves na lista keys
+
+	// Grava todas as combinacoes das chaves na lista keys
 	private static void allkeyCombinations(int key_size) {
 		for (int i = 0; i < Math.pow(2, key_size); i++) {
 			String binary = Integer.toBinaryString(i);
@@ -72,13 +73,11 @@ public class Key {
 			}
 			keys.add(new_key);
 		}
-		
-		System.out.println("Todas as chaves possiveis: "+keys);
+		System.out.println("Todas as chaves possiveis: " + keys);
 		System.out.println();
-
 	}
 
-//Retorna a letra de maior frequencia
+	//Retorna a letra de maior frequencia
 	private static String mf(ArrayList<AlphabetValue> ocorrencias) {
 		int frequencia = 0;
 		String letra = "";

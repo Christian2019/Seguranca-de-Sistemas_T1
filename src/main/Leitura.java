@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class Leitura {
-//Le um txt e Grava o conteudo da primeira linha na String texto no Game
+	//Le um txt e grava o conteudo da primeira linha na String texto da classe Game
 	public static void load(String path) {
 
 		int cont_line = 1;
